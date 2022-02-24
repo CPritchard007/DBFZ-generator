@@ -6,6 +6,18 @@ body {
   background-color: #272727;
   overflow: hidden;
 }
+body::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  z-index: 1;
+  box-shadow: 0 0 20vw 30vw rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: perspective(200px) rotateX(30deg);
+}
 body video {
   position: absolute;
   width: 100%;
@@ -16,8 +28,7 @@ body video {
 body .content {
   position: absolute;
   inset: 0 0 0 0;
-  background-color: rgba(29, 38, 56, 0.726);
-  box-shadow: inset 0 -40vh 80px 0px rgba(0, 0, 0, 0.87), inset 40px 0 50px 40px rgba(0, 0, 0, 0.137), inset -40px 0 50px 40px rgba(0, 0, 0, 0.137);
+  background-color: rgba(29, 38, 56, 0.856);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,8 +50,8 @@ body .content .center span {
 }
 body .content .center .button-container {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   left: 50%;
   top: 0;
   transform: translateX(-50%);
@@ -77,6 +88,7 @@ body .content .center .left .character .image,
 body .content .center .right .character .image {
   width: 200px;
   height: 200px;
+  background-color: rgba(255, 255, 255, 0.26);
   background-position: center;
   background-size: contain;
   margin: 0 auto;
