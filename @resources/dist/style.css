@@ -16,15 +16,14 @@ body video {
 body .content {
   position: absolute;
   inset: 0 0 0 0;
-  background-color: rgba(29, 38, 56, 0.959);
+  background-color: rgba(29, 38, 56, 0.726);
   box-shadow: inset 0 -40vh 80px 0px rgba(0, 0, 0, 0.87), inset 40px 0 50px 40px rgba(0, 0, 0, 0.137), inset -40px 0 50px 40px rgba(0, 0, 0, 0.137);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 body .content .center {
-  width: auto;
-  height: auto;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 100px 1fr;
 }
@@ -38,24 +37,78 @@ body .content .center span {
   justify-content: center;
   z-index: 3;
 }
-body .content .center .left, body .content .center .right {
-  display: flex;
+body .content .center .button-container {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  background-color: #da7d13;
+  border-radius: 50%;
+  border: 5px solid rgba(0, 0, 0, 0.445);
+  z-index: 10;
 }
-body .content .center .left .character .image, body .content .center .right .character .image {
+body .content .center .button-container div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.445);
+}
+body .content .center .button-container div svg {
+  width: 80%;
+  height: 80%;
+}
+body .content .center .left,
+body .content .center .right {
+  display: flex;
+  justify-content: space-evenly;
+}
+body .content .center .left .character,
+body .content .center .right .character {
+  position: relative;
+  overflow-wrap: break-word;
+  width: 100%;
+  margin: 5px;
+}
+body .content .center .left .character .image,
+body .content .center .right .character .image {
   width: 200px;
   height: 200px;
   background-position: center;
   background-size: contain;
-  margin: 10px;
+  margin: 0 auto;
   border: #d8900a solid 5px;
   border-radius: 15px;
 }
-body .content .center .left .character h4, body .content .center .right .character h4 {
-  top: -30px;
+body .content .center .left .character h4,
+body .content .center .right .character h4 {
+  top: 20px;
   position: relative;
   width: 100%;
+  margin: 0 auto;
   text-align: center;
-  font-size: 30px;
+  font-size: 18px;
   color: white;
-  font-family: "GreatFighter";
+  font-family: "arial";
+}
+body .content .left .character:nth-child(1) {
+  bottom: calc(((1 - 3) * -80px) + 60px);
+}
+body .content .right .character:nth-last-child(1) {
+  bottom: calc(((1 - 3) * -80px) + 60px);
+}
+body .content .left .character:nth-child(2) {
+  bottom: calc(((2 - 3) * -80px) + 60px);
+}
+body .content .right .character:nth-last-child(2) {
+  bottom: calc(((2 - 3) * -80px) + 60px);
+}
+body .content .left .character:nth-child(3) {
+  bottom: calc(((3 - 3) * -80px) + 60px);
+}
+body .content .right .character:nth-last-child(3) {
+  bottom: calc(((3 - 3) * -80px) + 60px);
 }

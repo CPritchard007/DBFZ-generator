@@ -31,10 +31,10 @@ var CHARACTERS = [{
   name: "Beerus"
 }, {
   id: 8,
-  name: "Broly"
+  name: "Broly (Super)"
 }, {
   id: 9,
-  name: "Broly (Super)"
+  name: "Broly"
 }, {
   id: 10,
   name: "Buu"
@@ -219,5 +219,13 @@ var displayCharacters = function displayCharacters(player, side) {
   }
 };
 
-displayCharacters(player1, 'left');
-displayCharacters(player2, 'right');
+var refresh = function refresh() {
+  document.querySelector('.left').innerHTML = '';
+  document.querySelector('.right').innerHTML = '';
+  player1 = generateRandomCharacters(player1);
+  player2 = generateRandomCharacters(player2);
+  displayCharacters(player1, 'left');
+  displayCharacters(player2, 'right');
+};
+
+refresh();
