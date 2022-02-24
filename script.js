@@ -200,5 +200,11 @@ let refresh = () => {
     displayCharacters(player1, 'left');
     displayCharacters(player2, 'right');
 }
-
+document.querySelector('video').playbackRate = 0.5;
 refresh();
+//on space pressed
+document.addEventListener('keydown', (e) => {
+    if (e.key === ' ') {
+        refresh();
+    }
+});

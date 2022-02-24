@@ -28,7 +28,7 @@ body video {
 body .content {
   position: absolute;
   inset: 0 0 0 0;
-  background-color: rgba(29, 38, 56, 0.856);
+  background-color: rgba(29, 38, 56, 0.938);
   display: flex;
   justify-content: center;
   align-items: center;

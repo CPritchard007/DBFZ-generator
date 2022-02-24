@@ -228,4 +228,11 @@ var refresh = function refresh() {
   displayCharacters(player2, 'right');
 };
 
-refresh();
+document.querySelector('video').playbackRate = 0.5;
+refresh(); //on space pressed
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === ' ') {
+    refresh();
+  }
+});
